@@ -41,7 +41,6 @@ class SpotifySearch extends React.Component {
     .then(res => res.json())
     .then(
       (result) => {
-        console.log(result);
         if (result.error && result.message) {
           this.setState({error: "Error: " + (result.message)});
         }
@@ -54,7 +53,6 @@ class SpotifySearch extends React.Component {
         }
       },
       (error) => {
-        console.log(error);
         this.setState({error: "Error: " + error.message});
       }
     )

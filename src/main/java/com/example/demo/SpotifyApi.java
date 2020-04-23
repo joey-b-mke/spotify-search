@@ -42,7 +42,6 @@ public class SpotifyApi {
   private void updateAccessToken() {
     // get api access token
     String clientId = System.getenv("SpotifyClientId");
-    System.out.println("client id: " + clientId);
     String clientSecret = System.getenv("SpotifyClientSecret");
     String idAndSecret = clientId + ":" + clientSecret;
     RequestBody formBody = new FormBody.Builder().add("grant_type", "client_credentials").build();
