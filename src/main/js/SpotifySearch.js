@@ -129,10 +129,10 @@ class ResultsList extends React.Component {
    * @param itemB - JSON artist/track object
    */
   compareItems(itemA, itemB) {
-    if (itemA.name < itemB.name) {
+    if (itemA.name.toUpperCase() < itemB.name.toUpperCase()) {
       return -1;
     }
-    if (itemA.name > itemB.name) {
+    if (itemA.name.toUpperCase() > itemB.name.toUpperCase()) {
       return 1;
     }
     return 0;

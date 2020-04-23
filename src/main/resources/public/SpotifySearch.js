@@ -239,10 +239,10 @@ var ResultsList = function (_React$Component2) {
   }, {
     key: 'compareItems',
     value: function compareItems(itemA, itemB) {
-      if (itemA.name < itemB.name) {
+      if (itemA.name.toUpperCase() < itemB.name.toUpperCase()) {
         return -1;
       }
-      if (itemA.name > itemB.name) {
+      if (itemA.name.toUpperCase() > itemB.name.toUpperCase()) {
         return 1;
       }
       return 0;
