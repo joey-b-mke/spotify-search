@@ -63,7 +63,6 @@ var SpotifySearch = function (_React$Component) {
       fetch('/search?query=' + this.state.query + '&type=' + this.state.selectedOption + '&offset=' + offset).then(function (res) {
         return res.json();
       }).then(function (result) {
-        console.log(result);
         if (result.error && result.message) {
           _this2.setState({ error: "Error: " + result.message });
         }
@@ -74,7 +73,6 @@ var SpotifySearch = function (_React$Component) {
           _this2.setState({ tracks: result.tracks.items, hasPrevious: result.tracks.previous !== null, hasNext: result.tracks.next !== null, offset: result.tracks.offset });
         }
       }, function (error) {
-        console.log(error);
         _this2.setState({ error: "Error: " + error.message });
       });
     }
@@ -112,7 +110,7 @@ var SpotifySearch = function (_React$Component) {
       ) : null;
       return React.createElement(
         'div',
-        { className: 'container text-center' },
+        { className: 'container jumbotron text-center' },
         React.createElement(
           'h1',
           null,
@@ -164,9 +162,22 @@ var SpotifySearch = function (_React$Component) {
           )
         ),
         React.createElement(ResultsList, { artists: this.state.artists, tracks: this.state.tracks }),
-        prevBtn,
-        ' ',
-        nextBtn
+        React.createElement(
+          'div',
+          { className: 'row pt-2' },
+          React.createElement(
+            'div',
+            { className: 'col' },
+            prevBtn
+          ),
+          ' ',
+          React.createElement(
+            'div',
+            { className: 'col' },
+            ' ',
+            nextBtn
+          )
+        )
       );
     }
   }]);

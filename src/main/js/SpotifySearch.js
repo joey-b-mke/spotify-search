@@ -71,7 +71,7 @@ class SpotifySearch extends React.Component {
     const prevBtn = this.state.hasPrevious ? <button onClick={() => this.onButtonClick(this.state.offset - 20)} className="btn btn-outline-secondary pull-left" type="button" id="button-previous">Previous</button> : null;
     const nextBtn = this.state.hasNext ? <button onClick={() => this.onButtonClick(this.state.offset + 20)} className="btn btn-outline-secondary pull-right" type="button" id="button-next">Next</button> : null;
     return (
-      <div className="container text-center">
+      <div className="container jumbotron text-center">
         <h1>Spotify Search</h1>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
@@ -97,7 +97,7 @@ class SpotifySearch extends React.Component {
           </div>
         </div>
         <ResultsList artists={this.state.artists} tracks={this.state.tracks}/>
-        {prevBtn} {nextBtn}
+        <div className="row pt-2" ><div className="col">{prevBtn}</div> <div className="col"> {nextBtn}</div></div>
       </div>
     );
   }
